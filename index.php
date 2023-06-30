@@ -97,11 +97,13 @@
                     if(res.data)
                     {
                         const transactionStatus = res.data.purchase_units[0].payments.captures[0].status;
+                        const paypalFee = res.data.purchase_units[0].payments.captures[0].seller_receivable_breakdown.paypal_fee.value; //obtiene el valor del fee 
                         if(transactionStatus == 'COMPLETED')
                         {
                             // Fetch a backend para los eventos post venta
                             // MARIA:: AQUI NECESITO EL PAYPAL FEE
                             console.log(res)
+                            console.log('the PayPal Fee is: '+ paypalFee); //muestra el fee que cobra PayPal en consola
                             console.log('Paypal Fee?')
                             return false;
                             // window.location.href = 'pages/success.php';
@@ -168,11 +170,13 @@
                     if(res.data)
                     {
                         const transactionStatus = res.data.purchase_units[0].payments.captures[0].status;
+                        const paypalFee = res.data.purchase_units[0].payments.captures[0].seller_receivable_breakdown.paypal_fee.value; //obtiene el valor del fee 
                         if(transactionStatus == 'COMPLETED')
                         {
                             // Fetch a backend para los eventos post venta
                             // MARIA:: AQUI NECESITO EL PAYPAL FEE
                             console.log(res)
+                            console.log('the PayPal Fee is: '+ paypalFee); //muestra el fee que cobra PayPal en consola
                             console.log('Paypal Fee?')
                             return false;
                             // window.location.href = 'pages/success.php';
